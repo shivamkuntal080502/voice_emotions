@@ -1,13 +1,3 @@
-import importlib, subprocess, sys
-
-# --- Auto-install missing dependencies at runtime ---
-for pkg in ("librosa",):
-    try:
-        importlib.import_module(pkg)
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
-
-
 import streamlit as st
 import numpy as np
 import librosa
